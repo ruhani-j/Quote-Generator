@@ -8,7 +8,7 @@ book|Carry yourself with the confidence of a mediocre white man||Love Hypothesis
 bollywood|Iss duniya mein har koi galat hai, sahi woh hai, jo kam galat hai|Karam/Ayushmann Khurrana|Dream Girl
 song|Jaane do jo hua, Milega phir koi, Yun guzar jaayegi zindagi|Akasa Singh|Yaad Na Aana
 book|No matter how we live, we both die at the end|Mateo|They Both Die at the End
-book|Getting up means leaving / Leaving means living before dying. Let’s bounce|Rufus and Mateo|They Both Die at the End
+book|“Getting up means leaving”\n”Yeah”\n“Leaving means dying”\n“Nah. Leaving means living before dying. Let’s bounce”|Rufus and Mateo|They Both Die at the End
 bollywood|If cricket is a religion, why are men the only gods?|Anushka Sharma|Chakda 'Xpress
 tv|Baba, you're beautiful|Chitvan|Tripling
 bollywood|Tumhara koi hak nahi banta ke tum itni sundar lago. Not fair!|Poo|Kabhi Khushi Kabhie Gam
@@ -32,7 +32,7 @@ music|KHWABEEDA ek rasta hai, ek talash hai, ek manzil hai|King|KHWABEEDA
 bollywood|Koi Indian kaise hota hai|Ayushmann Khurrana|Anek
 tv|Still a queen|Apoorva Arora|Filtercopy
 bollywood|Mere maathe pe kya likha hai?|Alia Bhatt|Darlings
-bollywood|Mere boyfriend se gulu gulu karegi toh dhoptungi|Alia Bhatt|Gully Boy
+bollywood|Mere boyfriend se gulu gulu karegi toh dhoptungi na usko|Alia Bhatt|Gully Boy
 webtoon|Hey you! Stop that leaking from your eyes thing!|Kissae|Death: Rescheduled
 webtoon|Kill me after lunch||Death: Rescheduled
 music|Kehti hai baat hazam nahi ho rahi|King|Oops
