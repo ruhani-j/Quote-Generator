@@ -1,5 +1,6 @@
 import random
 import time
+import msvcrt
 
 # Load quotes from file
 quotes = []
@@ -120,4 +121,13 @@ while True:
         print("Invalid choice. Please try again.")
         continue  # loops back to menu
     
-    time.sleep(3)  # pauses for 3 seconds so user can read the quote before being prompted again
+    #time.sleep(3)  # pauses for 3 seconds so user can read the quote before being prompted again
+    # Wait up to 3 seconds, exit early if Enter is pressed
+    start = time.time()
+    while True:
+        if msvcrt.kbhit():  # key was pressed
+            if msvcrt.getwch() == '\r':  # Enter key
+                break
+        if time.time() - start > 3:
+            break
+        time.sleep(0.05)  # small sleep to avoid busy wait
