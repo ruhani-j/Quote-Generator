@@ -26,13 +26,15 @@ sorted_quotes = quotes[:]
 
 while True:
     # Menu
+    # Menu
     print("\nQuote Generator")
     print("1. Show a random quote")
-    print("2. Show random quote by category")
-    print("3. Show all categories")
-    print("4. Print all quotes")
-    print("5. Sort quotes") 
-    print("6. Exit")
+    print("2. Show all categories")
+    print("3. Show random quote by category")
+    print("4. Add a new quote")
+    print("5. Sort quotes")
+    print("6. Print all quotes")
+    print("7. Exit")
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -45,7 +47,7 @@ while True:
             display += f" ({q['extra']})"
         print(display)
         
-    elif choice == "2":
+    elif choice == "3":
         cat = input("Enter category: ").lower()
         filtered = [q for q in quotes if q["category"] == cat]
         if filtered:
@@ -59,12 +61,33 @@ while True:
         else:
             print("No quotes in that category.")
             
-    elif choice == "3":
+    elif choice == "2":
         print("Available categories:")
         for cat in categories:
             print(f"- {cat}")
             
     elif choice == "4":
+        # Add new quote locally
+        new_category = input("Enter category: ").strip()
+        new_text = input("Enter quote text: ").strip()
+        new_source = input("Enter source (optional): ").strip()
+        new_extra = input("Enter extra info (optional): ").strip()
+        quotes.append({
+            "category": new_category.lower(),
+            "text": new_text,
+            "source": new_source,
+            "extra": new_extra
+        })
+        sorted_quotes = quotes[:]
+        if new_category.lower() not in categories:
+            categories.append(new_category.lower())
+            categories.sort()
+        # Save to local file
+        with open("quotes.txt", "a") as f:
+            f.write(f"{new_category}|{new_text}|{new_source}|{new_extra}\n")
+        print("Quote added successfully!")
+            
+    elif choice == "6":
         # Print all quotes neatly
         for q in sorted_quotes:
             display = f'"{q["text"]}"'
@@ -89,12 +112,12 @@ while True:
             sorted_quotes = quotes
         print("Quotes sorted!")
             
-    elif choice == "6":
+    elif choice == "7":
         print("Goodbye!")
         break
     
     else:
-        print("Invalid choice. Goodbye!")
-        break
+        print("Invalid choice. Please try again.")
+        continue  # loops back to menu
     
     time.sleep(3)  # pauses for 3 seconds so user can read the quote before being prompted again
