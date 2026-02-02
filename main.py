@@ -45,7 +45,7 @@ while True:
             display += f" ({q['extra']})"
         print(display)
         
-    if choice == "2":
+    elif choice == "2":
         cat = input("Enter category: ").lower()
         filtered = [q for q in quotes if q["category"] == cat]
         if filtered:
