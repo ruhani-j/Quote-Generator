@@ -6,3 +6,5 @@ bollywood|Picture abhi baaki hai mere dost.|Raj|Om Shanti Om
 bollywood|Pata hai problem kya hai? Ye baat na tu hazam kar pa raha hai na mein khatam kar pa rahi hoon.|Vaani Kapoor / Maanvi Brar|Chandigarh Kare Aashiqui
 music|Sapno ka kya hai bete dekhte raho.|Badshah|Aise Na Dekh Mujhe
 bollywood|Yeh zindagi bohut lambi hai.||Hum Tum
+book|Carry yourself with the confidence of a mediocre white man||Love Hypothesis
+bollywood|Iss duniya mein har koi galat hai, sahi woh hai, jo kam galat hai|Karam/Ayushmann Khurrana|Dream Girl
