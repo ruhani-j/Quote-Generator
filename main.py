@@ -1,9 +1,10 @@
 import random
 import time
+import msvcrt
 
 # Load quotes from file
 quotes = []
-with open("quotes.txt", "r") as f:
+with open("quotes.txt", "r", encoding="utf-8") as f:
     # category|quote|source|extra
     for line in f:
         parts = line.strip().split("|")
@@ -26,7 +27,6 @@ sorted_quotes = quotes[:]
 
 while True:
     # Menu
-    # Menu
     print("\nQuote Generator")
     print("1. Show a random quote")
     print("2. Show all categories")
@@ -45,7 +45,7 @@ while True:
             display += f" — {q['source']}"
         if q["extra"]:
             display += f" ({q['extra']})"
-        print(display)
+        print(display.replace("\\n", "\n"))  # Make \n display as actual new line
         
     elif choice == "3":
         cat = input("Enter category: ").lower()
@@ -57,7 +57,7 @@ while True:
                 display += f" — {q['source']}"
             if q["extra"]:
                 display += f" ({q['extra']})"
-            print(display)
+            print(display.replace("\\n", "\n"))  # Make \n display as actual new line
         else:
             print("No quotes in that category.")
             
@@ -83,7 +83,7 @@ while True:
             categories.append(new_category.lower())
             categories.sort()
         # Save to local file
-        with open("quotes.txt", "a") as f:
+        with open("quotes.txt", "a", encoding="utf-8") as f:
             f.write(f"{new_category}|{new_text}|{new_source}|{new_extra}\n")
         print("Quote added successfully!")
             
@@ -95,7 +95,7 @@ while True:
                 display += f" — {q['source']}"
             if q["extra"]:
                 display += f" ({q['extra']})"
-            print(display)
+            print(display.replace("\\n", "\n"))  # Make \n display as actual new line
      
     elif choice == "5":
         print("Sort quotes by:")
@@ -120,4 +120,12 @@ while True:
         print("Invalid choice. Please try again.")
         continue  # loops back to menu
     
-    time.sleep(3)  # pauses for 3 seconds so user can read the quote before being prompted again
+    # Wait up to 3 seconds, exit early if Enter is pressed
+    start = time.time()
+    while True:
+        if msvcrt.kbhit():  # key was pressed
+            if msvcrt.getwch() == '\r':  # Enter key
+                break
+        if time.time() - start > 3:
+            break
+        time.sleep(0.05)  # small sleep to avoid busy wait
