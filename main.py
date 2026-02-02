@@ -3,7 +3,7 @@ import time
 
 # Load quotes from file
 quotes = []
-with open("quotes.txt", "r") as f:
+with open("quotes.txt", "r", encoding="utf-8") as f:
     # category|quote|source|extra
     for line in f:
         parts = line.strip().split("|")
