@@ -4,6 +4,7 @@ import time
 # Load quotes from file
 quotes = []
 with open("quotes.txt", "r") as f:
+    # category|quote|source|extra
     for line in f:
         parts = line.strip().split("|")
         # Pad missing fields so there are always 4
