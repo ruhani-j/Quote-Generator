@@ -17,6 +17,7 @@ with open("quotes.txt", "r") as f:
             "source": source,
             "extra": extra
         })
+        
 # Collect all unique categories
 categories = sorted(set(q["category"] for q in quotes if q["category"]))
 
@@ -26,14 +27,25 @@ sorted_quotes = quotes[:]
 while True:
     # Menu
     print("\nQuote Generator")
-    print("1. Show random quote by category")
-    print("2. Show all categories")
-    print("3. Exit")
+    print("1. Show a random quote")
+    print("2. Show random quote by category")
+    print("3. Show all categories")
     print("4. Print all quotes")
-    print("5. Sort quotes")  # hidden option
+    print("5. Sort quotes") 
+    print("6. Exit")
     choice = input("Enter your choice: ")
 
     if choice == "1":
+        # Completely random quote
+        q = random.choice(quotes)
+        display = f'"{q["text"]}"'
+        if q["source"]:
+            display += f" — {q['source']}"
+        if q["extra"]:
+            display += f" ({q['extra']})"
+        print(display)
+        
+    if choice == "2":
         cat = input("Enter category: ").lower()
         filtered = [q for q in quotes if q["category"] == cat]
         if filtered:
@@ -47,7 +59,7 @@ while True:
         else:
             print("No quotes in that category.")
             
-    elif choice == "2":
+    elif choice == "3":
         print("Available categories:")
         for cat in categories:
             print(f"- {cat}")
@@ -77,7 +89,7 @@ while True:
             sorted_quotes = quotes
         print("Quotes sorted!")
             
-    elif choice == "3":
+    elif choice == "6":
         print("Goodbye!")
         break
     
@@ -85,4 +97,4 @@ while True:
         print("Invalid choice. Goodbye!")
         break
     
-    time.sleep(3)  # pauses for 3 seconds so user can read the quote before promting again
+    time.sleep(3)  # pauses for 3 seconds so user can read the quote before being prompted again
